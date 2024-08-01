@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Online Marketplace</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <nav>
+            <ul>
+                <li><a href="#">Home</a></li>
+                <li><a href="#">Categories</a></li>
+                <li><a href="#">Sellers</a></li>
+                <li><a href="#">Cart</a></li>
+                <li><a href="#">Login/Register</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <!-- product listing page -->
+        <div class="product-listing">
+            <h2>{{ product.title }}</h2>
+            <img src="{{ product.image }}" alt="{{ product.title }}">
+            <p>{{ product.description }}</p>
+            <p>Price: {{ product.price }}</p>
+            <button>Add to Cart</button>
+        </div>
+
+        <!-- search bar -->
+        <form>
+            <input type="search" id="search" placeholder="Search for products...">
+            <button>Search</button>
+        </form>
+
+        <!-- product list -->
+        <ul id="product-list">
+            {{#products}}
+                <li>
+                    <h3>{{ title }}</h3>
+                    <img src="{{ image }}" alt="{{ title }}">
+                    <p>{{ description }}</p>
+                    <p>Price: {{ price }}</p>
+                    <button>Add to Cart</button>
+                </li>
+            {{/products}}
+        </ul>
+    </main>
+    <script src="script.js"></script>
+</body>
+</html>
